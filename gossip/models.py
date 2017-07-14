@@ -21,7 +21,7 @@ class Link(models.Model):
     with_votes = LinkVoteCountManager
     objects = models.Manager()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 

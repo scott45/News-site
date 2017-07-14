@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<ol>
+<ul>
     {% for link in object_list %}
         <li>
         <a href="{{ link.url }}">
@@ -10,6 +10,6 @@
         </a>
         </li>
     {% endfor %}
-    </ol>
+    </ul>
 
 {% endblock %}
