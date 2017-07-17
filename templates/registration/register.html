@@ -1,0 +1,36 @@
+{% extends 'base_visitor.html' %}
+{% block title %}Register{% endblock %}
+{% block register_active %}active{% endblock %}
+
+{% block body %}
+     <div style="text-align: center;">
+<div class="container-fluid" style="text-align: center">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6" style="float:none; margin:0px auto;">
+            <div class="panel panel-default" style="border: 2px solid blue">
+                <div class="panel-body" style="color: #1169ff;">
+                    <h3>Register for an Account</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'gossip/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    <a href="{% url 'login_user' %}">Login link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+     </div>
+{% endblock %}
