@@ -4,8 +4,6 @@ from django.db.models import Count
 
 
 class LinkVoteCountManager(models.Manager):
-    pass
-
     def get_query_set(self):
         return super(LinkVoteCountManager, self).get_queryset().annotate(votes=Count('vote')).order_by('-votes')
 
@@ -29,5 +27,5 @@ class Vote(models.Model):
     voter = models.ForeignKey(User)
     link = models.ForeignKey(Link)
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s upvoted %s" % (self.voter.username, self.link.title)
