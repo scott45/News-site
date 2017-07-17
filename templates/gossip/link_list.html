@@ -1,15 +1,27 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
 
 {% block content %}
-
-<ul>
-    {% for link in object_list %}
-        <li>
-        <a href="{{ link.url }}">
-          <b>{{ link.title }}</b>
-        </a>
-        </li>
-    {% endfor %}
-    </ul>
-
+{% if is_paginated %}
+    <ol start="{{ page_obj.start_index }}">
+    {% else %}
+    <ol>
+    {% endif %}
+{% for link in object_list %}
+    <li><a href="{% url 'link_detail' pk=link.pk %}">
+      <b>{{ link.title }}</b>
+    </a>
+    </li>
+{% endfor %}
+</ol>
+    {% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">More &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}
 {% endblock %}
