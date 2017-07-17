@@ -6,14 +6,6 @@ from .forms import UserForm
 from django.shortcuts import render
 
 
-class LinkListView(ListView):
-    model = Link
-    paginate_by = 10
-
-    def get_query_set(self):
-        return Link.with_votes.all(self)
-
-
 def register(request):
     form = UserForm(request.POST or None)
     if form.is_valid():
@@ -54,3 +46,11 @@ def logout_user(request):
         "form": form,
     }
     return render(request, 'registration/login.html', context)
+
+
+class LinkListView(ListView):
+    model = Link
+    paginate_by = 10
+
+    def get_query_set(self):
+        return Link.with_votes.all(self)
