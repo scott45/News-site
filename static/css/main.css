@@ -26,20 +26,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    color: #0a2741;
+    color: #1e36ff;
     font-family: 'Passion One', cursive;
     font-weight: normal;
-    padding: 15px 0 0 0;
+    padding: 8px 0 0 0;
     font-size: 3em;
-    text-shadow: 1px 1px #000, 2px 2px #02a2fe, 3px 3px #02a2fe, 4px 4px #02a2fe, 5px 5px #02a2fe, 6px 6px #02a2fe;
+    /*text-shadow: 1px 1px #000, 2px 2px #fe2326, 3px 3px #fe343a, 4px 4px #02a2fe, 5px 5px #02a2fe, 6px 6px #02a2fe;*/
 }
 
 h3 {
-    color: #1e36ff;
+    color: #070406;
 }
 
 a {
-    background: #FFFF00;
+    background: #f2ff50;
     color: #00399C;
     text-decoration: none;
 }
