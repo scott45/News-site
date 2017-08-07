@@ -35,7 +35,8 @@ def login_user(request):
             if user.is_active:
                 return render(request, 'gossip/link_list.html')
             else:
-                return render(request, 'registration/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'registration/login.html',
+                              {'error_message': 'Your account has been disabled'})
         else:
             return render(request, 'registration/login.html', {'error_message': 'Invalid login'})
     return render(request, 'registration/login.html')
